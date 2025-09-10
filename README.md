@@ -12,18 +12,15 @@ The objective goes beyond simple sales metrics—it answers complex business que
 
 ```mermaid
 flowchart TD
-    A[Data Ingestion] --> B[Data Engineering]
-    B --> C[Exploratory Data Analysis]
-    C --> D[Statistical & In-depth Analysis]
-    D --> E[Dashboarding & Insights]
 
-    A:::step
-    B:::step
-    C:::step
-    D:::step
-    E:::step
+    A[Define Business Problem] --> B[(Database)]
+    B --> C[Explore Database Tables<br/>Merge & Clean Data]
+    C --> D[Aggregated Table]
+    D -->|Save into Database| B
+    D -->|Load aggregated table in Jupyter Notebook| E[Exploratory Data Analysis<br/>• Data Cleaning<br/>• Solving Research Questions<br/>• Analyze & Interpret Findings]
+    E --> F[Create Dashboard in Power BI]
+    F --> G[Report Writing]
 
-classDef step fill:#f5f5f5,stroke:#333,stroke-width:1px,rx:10,ry:10;
 
 ## Business Problem
 
