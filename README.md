@@ -1,72 +1,130 @@
-Vendor Performance & Sales Analysis
-An end-to-end data analysis project to uncover actionable insights into vendor performance, profitability, and inventory efficiency using Python, SQL, and Power BI. This project transforms raw transactional data into a strategic dashboard for business decision-making.
+# Vendor Performance & Sales Analysis
+An end-to-end data analysis project uncovering actionable insights into vendor performance, profitability, and inventory efficiency using Python, SQL, and Power BI.
 
-[Link to Dashboard Image]
+This project transforms raw transactional data into a strategic dashboard for smarter business decision-making.
 
-📝 About The Project
-This project performs a comprehensive analysis of a sales and inventory dataset to evaluate vendor and brand performance. The primary objective is to move beyond simple sales metrics and answer complex business questions related to profitability, purchasing patterns, and inventory risk.
+## About the Project
+This project performs a comprehensive analysis of a sales and inventory dataset to evaluate vendor and brand performance.
 
-The project pipeline begins with ingesting raw data files, followed by an intensive data engineering phase using SQL and Python to create a unified analytical dataset. In-depth exploratory and statistical analyses are then conducted in Jupyter Notebooks. The final, actionable insights are presented in an interactive Power BI dashboard.
+The objective goes beyond simple sales metrics—it answers complex business questions around profitability, purchasing patterns, and inventory risk.
 
- Key Business Questions Addressed:
+## ⚙️ Project Pipeline  
 
-Who are the top vendors by sales and overall purchase contribution?
+```mermaid
+flowchart TD
+    A[Data Ingestion] --> B[Data Engineering]
+    B --> C[Exploratory Data Analysis]
+    C --> D[Statistical & In-depth Analysis]
+    D --> E[Dashboarding & Insights]
 
-How does bulk purchasing impact per-unit costs?
+    A:::step
+    B:::step
+    C:::step
+    D:::step
+    E:::step
 
-Is there a statistically significant difference in profit margins between high-volume and low-volume sales?
+classDef step fill:#f5f5f5,stroke:#333,stroke-width:1px,rx:10,ry:10;
 
-Which vendors are most associated with slow-moving inventory and locked-up capital?
+## Business Problem
 
-Can we identify "niche champion" brands with low sales volume but high profitability?
+Effective inventory and sales management are critical for driving profitability in the retail and wholesale sectors. Companies face financial risks due to:
 
- Tech Stack
+Inefficient pricing strategies
+
+Poor inventory turnover
+
+Overdependence on specific vendors
+
+To mitigate these risks and uncover strategic insights, this analysis aims to:
+
+🔍 Identify underperforming brands that may need promotional or pricing adjustments
+
+📈 Determine top-performing vendors contributing most to sales and gross profits
+
+📦 Analyze the impact of bulk purchasing on unit cost efficiency
+
+🔄 Assess inventory turnover to minimize holding costs and maximize operational efficiency
+
+📊 Investigate profitability gaps between high-performing and low-performing vendors
+
+This project empowers data-driven decisions that optimize profitability, vendor management, and inventory operations across the business.
+## 🛠️ Tech Stack
+
 Data Ingestion & Transformation: Python (Pandas), SQL (SQLite)
 
 Statistical Analysis: Python (NumPy, SciPy)
 
-Data Visualization: Matplotlib, Seaborn
+Visualization: Matplotlib, Seaborn
 
 BI Dashboarding: Power BI, DAX
 
 Environment: Jupyter Notebook
 
-⚙️ Project Workflow
-The project follows a structured, multi-stage data analysis workflow:
+## Project Workflow
 
-Data Ingestion: Raw CSV files containing sales, purchase, and vendor data are automatically ingested into a centralized SQLite database using the ingestion_db.py script.
+### Data Ingestion
 
-Data Engineering: A robust Python script (get_vendor_summary.py) executes a complex SQL query with Common Table Expressions (CTEs) to join and aggregate data. It then enriches the dataset by creating new calculated columns (e.g., GrossProfit, ProfitMargin, StockTurnover).
+Raw CSV files (sales, purchase, vendor data) ingested into a centralized SQLite database (ingestion_db.py).
 
-Exploratory Data Analysis (EDA): The Exploratory data Analysis.ipynb notebook is used for initial data validation, cleaning, and understanding distributions and relationships.
+### Data Engineering
 
-In-depth & Statistical Analysis: The core analysis is performed in the Vendor Performance Analysis.ipynb notebook. This includes statistical hypothesis testing (t-tests), Pareto analysis, and segmentation.
+Python script (get_vendor_summary.py) executes SQL queries with CTEs to join & aggregate data.
 
-Dashboarding: The final, cleaned dataset is loaded into Power BI, where DAX measures and calculated tables are created to build interactive visuals that present the key findings.
+New calculated fields: GrossProfit, ProfitMargin, StockTurnover.
 
-📊 Key Analyses and Insights
-1. Pareto Analysis: Vendor Purchase Contribution
+### Exploratory Data Analysis (EDA)
 
-A Pareto chart was created to confirm the 80/20 rule, revealing that approximately 80% of the total purchase dollars come from the top 20% of vendors. This helps prioritize relationship management with key suppliers.
+Conducted in Exploratory Data Analysis.ipynb.
 
+Includes data validation, cleaning, and distribution checks.
 
-Licensed by Google
-2. Profitability Analysis: High-Volume vs. Low-Volume Sales
+In-Depth & Statistical Analysis
 
-A statistical hypothesis test (independent two-sample t-test) was conducted to compare profit margins.
+Main analysis in Vendor Performance Analysis.ipynb.
 
-Null Hypothesis (H₀): There is no significant difference in the mean profit margins of top-performing and low-performing vendors.
+Applied hypothesis testing (t-tests), Pareto analysis, and segmentation.
 
-Result: The test yielded a p-value < 0.05, leading to the rejection of the null hypothesis.
+Dashboarding
 
-Conclusion: Low-volume sales transactions generate a statistically significant higher profit margin than high-volume sales, suggesting a successful premium or niche product strategy.
+Cleaned dataset loaded into Power BI.
 
-3. Niche Brand Identification
+Built DAX measures and calculated tables for interactive visualizations.
 
-A scatter plot visualizes all brands based on their sales volume and average profit margin. A DAX calculated column flags "Target Brands" that fall in the bottom 15% of sales but the top 15% of profitability, identifying them as "niche champions" with high growth potential.
+## Key Analyses & Insights
 
-4. Inventory Risk & Unsold Capital
+### 1. Pareto Analysis: Vendor Purchase Contribution
 
-The analysis calculated the total capital locked in unsold inventory, aggregated by vendor. A bar chart identifies the top 10 vendors associated with the highest value of slow-moving stock, highlighting potential risks in the supply chain.
+Confirmed the 80/20 rule → ~80% of purchase dollars came from top 20% of vendors.
 
+Helps prioritize strategic supplier relationships.
 
+### 2. Profitability Analysis: High vs. Low Volume Sales
+
+Hypothesis Test: Independent two-sample t-test.
+
+Result: p-value < 0.05 → significant difference.
+
+Conclusion: Low-volume sales generate higher profit margins → strong premium/niche strategy.
+
+### 3. Niche Brand Identification
+
+Scatter plot of sales volume vs. profit margin.
+
+DAX calculated column flags “Target Brands” in bottom 15% of sales but top 15% of profitability.
+
+Identified as “niche champions” with high growth potential.
+
+### 4. Inventory Risk & Unsold Capital
+
+Calculated total capital tied up in unsold stock.
+
+Bar chart highlights top 10 vendors with highest slow-moving inventory.
+
+Informs supply chain risk management.
+
+## Outcomes
+Delivered a centralized analytical dataset integrating sales, purchase, and inventory.
+
+Created interactive Power BI dashboard for executives.
+
+Produced statistically validated insights supporting vendor prioritization and inventory optimization.
