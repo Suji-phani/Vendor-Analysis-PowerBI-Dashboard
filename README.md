@@ -11,7 +11,12 @@ The objective goes beyond simple sales metrics—it answers complex business que
 
 ## ⚙️ Project Pipeline
 
-```mermaid
+### Project Pipeline Section
+
+This is some text describing the diagram. Notice the blank line before the code block.
+
+```mermaid  <-- 1. This is the **OPENING** fence.
+
 flowchart TD
     A[Data Ingestion] --> B[Data Engineering]
     B --> C[Exploratory Data Analysis]
@@ -26,7 +31,12 @@ flowchart TD
     D:::step
     E:::step
 
+```  <-- 2. THIS IS THE **CLOSING** FENCE.
 
+Notice the blank line after the code block.
+
+### Next Section
+This is the next part of your file.
 ## Business Problem
 
 Effective inventory and sales management are critical for driving profitability in the retail and wholesale sectors. Companies face financial risks due to:
