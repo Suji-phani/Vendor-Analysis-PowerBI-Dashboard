@@ -12,19 +12,19 @@ The objective goes beyond simple sales metrics—it answers complex business que
 ## ⚙️ Project Pipeline
 
 ```mermaid
-flowchart TD;
-  A[Data Ingestion] --> B[Data Engineering];
-  B --> C[Exploratory Data Analysis];
-  C --> D[Statistical & In-depth Analysis];
-  D --> E[Dashboarding & Insights];
+flowchart TD
+    A[Data Ingestion] --> B[Data Engineering]
+    B --> C[Exploratory Data Analysis]
+    C --> D[Statistical & In-depth Analysis]
+    D --> E[Dashboarding & Insights]
 
-  A:::step
-  B:::step
-  C:::step
-  D:::step
-  E:::step
-
-  classDef step fill:#f5f5f5,stroke:#333,stroke-width:1px,rx:8,ry:8;
+    classDef step fill:#f5f5f5,stroke:#333,stroke-width:1px,rx:8,ry:8
+    
+    A:::step
+    B:::step
+    C:::step
+    D:::step
+    E:::step
 
 
 ## Business Problem
