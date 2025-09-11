@@ -7,19 +7,24 @@ This project transforms raw transactional data into a strategic dashboard for sm
 This project performs a comprehensive analysis of a sales and inventory dataset to evaluate vendor and brand performance.
 
 The objective goes beyond simple sales metrics—it answers complex business questions around profitability, purchasing patterns, and inventory risk.
+ 
 
-## ⚙️ Project Pipeline  
+## ⚙️ Project Pipeline
 
 ```mermaid
-flowchart TD
+flowchart TD;
+  A[Data Ingestion] --> B[Data Engineering];
+  B --> C[Exploratory Data Analysis];
+  C --> D[Statistical & In-depth Analysis];
+  D --> E[Dashboarding & Insights];
 
-    A[Define Business Problem] --> B[(Database)]
-    B --> C[Explore Database Tables<br/>Merge & Clean Data]
-    C --> D[Aggregated Table]
-    D -->|Save into Database| B
-    D -->|Load aggregated table in Jupyter Notebook| E[Exploratory Data Analysis<br/>• Data Cleaning<br/>• Solving Research Questions<br/>• Analyze & Interpret Findings]
-    E --> F[Create Dashboard in Power BI]
-    F --> G[Report Writing]
+  A:::step
+  B:::step
+  C:::step
+  D:::step
+  E:::step
+
+  classDef step fill:#f5f5f5,stroke:#333,stroke-width:1px,rx:8,ry:8;
 
 
 ## Business Problem
